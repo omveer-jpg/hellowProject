@@ -1,0 +1,51 @@
+#headerid{
+    width:100%;
+    height:100px;
+    background:black;
+}
+
+.Student{
+    color:white;
+    height:40px;
+    width:280px;
+    position:relative;
+    top:35%;
+
+}
+
+.headerinner{
+    width: 250px;
+    display: flex;
+    float: right;
+    justify-content: space-around;
+    position: relative;
+    bottom:8px;
+}
+
+.headerbut{
+    border-radius: 18px;
+}
+
+table {
+    width: 100%;
+    text-align:center;
+  }
+
+  #tableid{
+    border:1px solid red
+  }
+
+  .buttons{
+    display:flex;
+    justify-content: space-evenly;
+  }
+
+  .editbutton{
+    background:rgb(142, 196, 142);
+    cursor:pointer;
+  }
+
+ .deletebutton{
+    background:rgb(189, 90, 90);
+    cursor:pointer;
+  }

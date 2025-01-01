@@ -1,0 +1,36 @@
+<div id="headerid">
+    <div class="Student">
+        <h2>Student Management System</h2>
+    </div>
+    <div class="headerinner">
+        <button mat-button class="headerbut" mat-raised-button color="accent">List Of Students</button>
+        <button mat-button class="headerbut" mat-raised-button color="accent" (click)="openDialog()">Add
+            Student</button>
+    </div><br>
+</div><br><br>
+
+
+<table cellspacing="2px" cellpadding="2px" border="1px solid red">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item5 of sandtotable">
+            <td>{{item5?.id}}</td>
+            <td>{{item5?.name}}</td>
+            <td>{{item5?.email}}</td>
+            <td>{{item5?.phone}}</td>
+            <td>{{item5?.city}}</td>
+            <td class="buttons"><button class="editbutton" (click)="Editmethod(item5)">Edit</button>
+                <button class="deletebutton" (click)="deletemethod(item5.id)">Delete</button></td> 
+        </tr>
+    </tbody>
+</table>
+
