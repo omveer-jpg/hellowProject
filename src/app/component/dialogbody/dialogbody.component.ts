@@ -50,7 +50,7 @@ export class DialogbodyComponent implements OnInit {
        name:this.data.student?.name,
        email:this.data.student?.email,
        phone:this.data.student?.phone,
-       city:this.data.student?.city,
+       city:this.data.student?.city
     })
 
 console.log(this.signupform);
