@@ -88,7 +88,7 @@ export class HeaderComponent implements OnInit,OnDestroy {
   }
 
 
-  //edit method that is
+  //edit method that is third change
   Editmethod(deStudent:any){
     this.dialog.open(DialogbodyComponent,{
       width:'380px',

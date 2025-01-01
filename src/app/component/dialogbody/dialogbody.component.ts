@@ -53,7 +53,7 @@ export class DialogbodyComponent implements OnInit {
        city:this.data.student?.city,
     })
 
-
+console.log(this.signupform);
   }    
 
 }
