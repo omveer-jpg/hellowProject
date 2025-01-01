@@ -88,13 +88,13 @@ export class HeaderComponent implements OnInit,OnDestroy {
   }
 
 
-  //edit method
+  //edit method that is
   Editmethod(deStudent:any){
     this.dialog.open(DialogbodyComponent,{
       width:'380px',
       data:{mode:'edit', student:deStudent}
     });
-    //console.log(this.data)
+    //console.log(data)
   }
 
   ngOnDestroy(): void {
