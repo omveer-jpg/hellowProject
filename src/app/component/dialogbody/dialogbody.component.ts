@@ -9,52 +9,51 @@ import { ValidService } from 'src/app/services/valid.service';
   styleUrls: ['./dialogbody.component.css']
 })
 export class DialogbodyComponent implements OnInit {
-   inputtext:any='';
-   dialogclose:any=''; 
-   getdatavalid:any; 
-   ondestroyeddata:any;
-   changebutton='';
-  
+  dialogclose: any = '';
+  getdatavalid: any;
+  ondestroyeddata: any;
+  buttonName = '';
 
-  constructor(private validservice:ValidService,@Inject(MAT_DIALOG_DATA) public data:any) { }
+
+  constructor(private validservice: ValidService, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   signupform = new FormGroup({
-    id : new FormControl('',[Validators.required]),
-    name : new FormControl('',[Validators.required]),
-    email : new FormControl('',[Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
-    phone : new FormControl('',[Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
-    city : new FormControl('',[Validators.required])
-  })
+    id: new FormControl('', [Validators.required]),
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]),
+    phone: new FormControl('', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
+    city: new FormControl('', [Validators.required])
+  });
 
-  get f(){
-   return this.signupform.controls;
+  get f() {
+    return this.signupform.controls;
   }
 
-  handleform(e:any){
+  handleform(e: any) {
     this.validservice.dataEmitToComponent(e);
     this.dialogclose = true;
 
-   
+
   }
 
   ngOnInit(): void {
-   console.log(this.data);
-    if(this.data.mode ==='edit'){
-   this.changebutton ='upadate';
-    }else{
-      this.changebutton ='add';
+    console.log(this.data);
+    if (this.data.mode === 'edit') {
+      this.buttonName = 'upadate';
+    } else {
+      this.buttonName = 'add';
     }
 
     this.signupform.patchValue({
-       id:this.data.student?.id,
-       name:this.data.student?.name,
-       email:this.data.student?.email,
-       phone:this.data.student?.phone,
-       city:this.data.student?.city
-    })
+      id: this.data.student?.id,
+      name: this.data.student?.name,
+      email: this.data.student?.email,
+      phone: this.data.student?.phone,
+      city: this.data.student?.city
+    });
 
-console.log(this.signupform);
-  }    
+    console.log(this.signupform);
+  }
 
 }
 

@@ -1,9 +1,10 @@
 <div id="dialogdiv">
-    <form [formGroup] = "signupform" (ngSubmit)="handleform(signupform.value)">
+    <form [formGroup]="signupform" (ngSubmit)="handleform(signupform.value)">
         <table id="tableId">
             <tr>
                 Id:<br>
-                <input type="text" name="id" class="inputfield" formControlName="id" [class.radhe]="f['id'].touched && f['id'].invalid">
+                <input type="text" name="id" class="inputfield" formControlName="id"
+                    [class.radhe]="f['id'].touched && f['id'].invalid">
             </tr>
             <div *ngIf="f['id'].touched && f['id'].invalid">
                 <div *ngIf="f['id'].errors && f['id'].errors['required']">
@@ -13,7 +14,8 @@
 
             <tr>
                 Name:<br>
-                <input type="text" name="name" class="inputfield" formControlName="name" [class.radhe]="f['name'].touched && f['name'].invalid">
+                <input type="text" name="name" class="inputfield" formControlName="name"
+                    [class.radhe]="f['name'].touched && f['name'].invalid">
             </tr>
             <div *ngIf="f['name'].touched && f['name'].invalid">
                 <div *ngIf="f['name'].errors && f['name'].errors['required']">
@@ -23,7 +25,8 @@
 
             <tr>
                 Email: <br>
-                <input type="email" name="email" class="inputfield" formControlName="email" [class.radhe]="f['email'].touched && f['email'].invalid">
+                <input type="email" name="email" class="inputfield" formControlName="email"
+                    [class.radhe]="f['email'].touched && f['email'].invalid">
             </tr>
             <div *ngIf="f['email'].touched && f['email'].invalid">
                 <div *ngIf="f['email'].errors && f['email'].errors['required']">
@@ -36,7 +39,8 @@
 
             <tr>
                 phone no: <br>
-                <input type="number" name="phone" class="inputfield" formControlName="phone" [class.radhe]="f['phone'].touched && f['phone'].invalid">
+                <input type="number" name="phone" class="inputfield" formControlName="phone"
+                    [class.radhe]="f['phone'].touched && f['phone'].invalid">
             </tr>
             <div *ngIf="f['phone'].touched && f['phone'].invalid">
                 <div *ngIf="f['phone'].errors && f['phone'].errors['required']">
@@ -49,7 +53,8 @@
 
             <tr>
                 city: <br>
-                <input type="text" name="city" class="inputfield" formControlName="city" [class.radhe]="f['city'].touched && f['city'].invalid">
+                <input type="text" name="city" class="inputfield" formControlName="city"
+                    [class.radhe]="f['city'].touched && f['city'].invalid">
             </tr>
             <div *ngIf="f['city'].touched && f['city'].invalid">
                 <div *ngIf="f['city'].errors && f['city'].errors['required']">
@@ -58,10 +63,10 @@
             </div><br><br>
 
             <tr id="buttonid">
-                <input type="submit" [disabled]="signupform.invalid" [value]="changebutton" name="addbutton" class="addbutton" [mat-dialog-close]="dialogclose">
+                <input type="submit" [disabled]="signupform.invalid" [value]="buttonName" name="addbutton"
+                    class="addbutton" [mat-dialog-close]="dialogclose">
                 <input type="button" value="Clear" mat-button mat-dialog-close name="clearbutton" class="clearbutton">
             </tr>
         </table>
     </form>
 </div>
-  
