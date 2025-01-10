@@ -5,6 +5,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { WorkComponent } from "./work/work.component";
 import { Child1Component } from "./home/child1/child1.component";
 import { Child2Component } from "./home/child2/child2.component";
+import { LoadGuard } from "./load.guard";
 
 const routes: Routes = [
     {
@@ -26,6 +27,15 @@ const routes: Routes = [
     {
         path: 'work',
         component: WorkComponent
+    },
+    {
+        path: "showroom",
+        loadChildren: () => import('./showroom/showroom.module').then(m => m.ShowroomModule),
+        canLoad: [LoadGuard]
+    },
+    {
+        path: "admin",
+        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
     }
 ];
 @NgModule({

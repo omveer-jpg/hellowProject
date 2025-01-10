@@ -28,4 +28,12 @@ export class AppComponent implements OnInit {
   onWork() {
     this.router.navigate(['work'], { relativeTo: this.route });
   }
+
+  showroom() {
+    this.router.navigate(['showroom'], { relativeTo: this.route });
+  }
+
+  admin() {
+    this.router.navigate(['admin'], { relativeTo: this.route });
+  }
 }
